@@ -33,6 +33,18 @@ class RestaurantTest {
 
  }
 
+    @Test
+    public void should_return_price_0_when_there_is_not_item_in_the_list() throws itemNotFoundException{
+
+        List<String> itemName = new ArrayList<String>();
+        itemName.add("Chole");
+        itemName.add("Puri");
+        itemName.add("Pizza");
+
+        assertEquals(restaurant.orderTotal(itemName),0);
+
+    }
+
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 

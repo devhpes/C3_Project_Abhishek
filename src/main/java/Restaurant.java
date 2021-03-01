@@ -30,7 +30,7 @@ public class Restaurant {
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
     public List<Item> getMenu() {
-        
+
         List<Item> Items = new ArrayList<Item>();
 
         Items.add(new Item("Chole",250));
@@ -68,6 +68,15 @@ public class Restaurant {
                 +"Menu:"+"\n"+getMenu());
 
     }
+
+    
+   public int orderTotal(List<String> Items) {
+    int sumTotal=0;
+    for (String item : Items) {
+        sumTotal = sumTotal+findItemByName(item).price;
+    }
+    return sumTotal;
+}
 
     public String getName() {
         return name;

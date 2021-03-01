@@ -17,16 +17,26 @@ public class Restaurant {
         this.closingTime = closingTime;
     }
 
-    public boolean isRestaurantOpen() {
-        return true;
-        //DELETE ABOVE STATEMENT AND WRITE CODE HERE
+    public boolean isRestaurantOpen(LocalTime currentTime) {
+       
+        if(currentTime.isAfter(openingTime) && currentTime.isBefore(closingTime)){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public LocalTime getCurrentTime(){ return  LocalTime.now(); }
 
     public List<Item> getMenu() {
-        return null;
-        //DELETE ABOVE RETURN STATEMENT AND WRITE CODE HERE
+        
+        List<Item> Items = new ArrayList<Item>();
+
+        Items.add(new Item("Chole",250));
+        Items.add(new Item("Puri",25));
+        Items.add(new Item("Pizza",199));
+        return Items;
     }
 
     private Item findItemByName(String itemName){
